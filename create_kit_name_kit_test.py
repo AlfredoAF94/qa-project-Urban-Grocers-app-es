@@ -41,6 +41,16 @@ def test_create_kit_with_empty_name():
     print("Response JSON:", response.json())
     assert response.status_code == 400
 
+#Prueba 4
+def test_create_kit_with_too_long_name():
+    kit_body = {
+        "name": "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD"
+    }
+    auth_token = sender_stand_request.get_new_user_token()
+    response = sender_stand_request.post_new_client_kit(kit_body, auth_token)
+    print("Response Status Code:", response.status_code)
+    print("Response JSON:", response.json())
+    assert response.status_code == 400
 
 
 
