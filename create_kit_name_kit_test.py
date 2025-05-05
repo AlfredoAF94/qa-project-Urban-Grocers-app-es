@@ -30,6 +30,18 @@ def test_create_kit_with_valid_name():
     assert response.status_code == 201
     assert response.json()["name"] == kit_body["name"]
 
+#Prueba 3
+def test_create_kit_with_empty_name():
+    kit_body = {
+        "name": ""
+    }
+    auth_token = sender_stand_request.get_new_user_token()
+    response = sender_stand_request.post_new_client_kit(kit_body, auth_token)
+    print("Response Status Code:", response.status_code)
+    print("Response JSON:", response.json())
+    assert response.status_code == 400
+
+
 
 
 
