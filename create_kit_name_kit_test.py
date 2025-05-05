@@ -88,6 +88,18 @@ def test_create_kit_with_numbers_characters():
     assert response.status_code == 201
     assert response.json()["name"] == kit_body["name"]
 
+#Prueba 8
+def negative_assert_code_400(kit_body):
+    auth_token = sender_stand_request.get_new_user_token()
+    response = sender_stand_request.post_new_client_kit(kit_body, auth_token)
+
+    assert response.status_code == 400
+    print("Response Status Code:", response.status_code)
+    print("Response JSON:", response.json())
+
+def test_create_kit_with_missing_name():
+    kit_body = {}
+    negative_assert_code_400(kit_body)
 
 
 
