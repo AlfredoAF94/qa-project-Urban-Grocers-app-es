@@ -101,7 +101,10 @@ def test_create_kit_with_missing_name():
     kit_body = {}
     negative_assert_code_400(kit_body)
 
-
+#Prueba 9
+def test_create_kit_with_name_as_number():
+    kit_body = {"name": 123}
+    negative_assert_code_400(kit_body)
 
 
 
