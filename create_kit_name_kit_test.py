@@ -64,6 +64,18 @@ def test_create_kit_with_special_characters():
     assert response.status_code == 201
     assert response.json()["name"] == kit_body["name"]
 
+#Prueba 6
+def test_create_kit_with_space_characters():
+    kit_body = {
+        "name": "  A Aaa "
+    }
+
+    auth_token = sender_stand_request.get_new_user_token()
+    response = sender_stand_request.post_new_client_kit(kit_body, auth_token)
+
+    assert response.status_code == 201
+    assert response.json()["name"] == kit_body["name"]
+
 
 
 
