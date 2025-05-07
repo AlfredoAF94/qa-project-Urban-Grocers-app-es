@@ -5,36 +5,29 @@ headers = {
     "Content-Type": "application/json"
 }
 
-# Cuerpo válido para crear un kit (se puede agregar el campo cardId si es necesario)
-valid_kit_body = {
-    "name": "Mi conjunto"
+kit_body_1 = { #Prueba 1
+        "name": "a"
+    }
+kit_body_2 = { #Prueba 2
+    "name": "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC"
 }
 
-# Cuerpo inválido (falta 'name' y 'cardId' o token)
-empty_body = {}
-
-# Cuerpo con nombre inválido (para prueba de validación)
-invalid_name_body = {
-    "name": "123@#"
+kit_body_3 = { #Prueba3
+    "name": ""
 }
 
-# Cuerpo con nombre demasiado corto
-short_name_body = {
-    "name": "A"
+kit_body_4 = { #Prueba 4
+    "name": "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD"
 }
 
-# Cuerpo con nombre demasiado largo
-long_name_body = {
-    "name": "NombreMuyLargoParaKit"
+kit_body_5 = { #Prueba 5
+    "name": "\"№%@\","
 }
 
-# Cuerpo con caracteres no permitidos
-special_char_name_body = {
-    "name": "Kit@Nombre!"
+kit_body_6 = { #Prueba 6
+    "name": "  A Aaa "
 }
 
-# Ejemplo con cardId explícito (cuando no se usa Authorization)
-kit_with_card_id = {
-    "name": "Kit para tarjeta",
-    "cardId": 1
+kit_body_7 = { #Prueba 7
+    "name": "123"
 }
